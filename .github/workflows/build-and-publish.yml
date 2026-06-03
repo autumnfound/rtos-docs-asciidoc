@@ -29,7 +29,6 @@ jobs:
           repository: ${{ env.TARGET_REPO }}
           ref: 'main'
           path: 'rtos-docs-html'
-          token: ${{ secrets.DOCS_PUBLISH_TOKEN }}
       - name: Install Node.js
         uses: actions/setup-node@v5
         with:
