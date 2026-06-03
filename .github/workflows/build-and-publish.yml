@@ -28,11 +28,10 @@ jobs:
         with:
           repository: ${{ env.TARGET_REPO }}
           ref: 'main'
-          path: 'html'
+          path: 'rtos-docs-html'
           token: ${{ secrets.DOCS_PUBLISH_TOKEN }}
       - name: Install Node.js
         uses: actions/setup-node@v5
-        working-directory: ./asciidoc
         with:
           node-version: '18'
       - name: Install Antora
@@ -43,7 +42,7 @@ jobs:
         working-directory: ./asciidoc
       - name: push to rtos-docs-html
         run: |
-          cd "${{ github.workspace }}/html"
+          cd "${{ github.workspace }}/rtos-docs-html"
 
           git config user.name "eclipse-threadx-bot"
           git config user.email "<threadx-bot@eclipse.org>"
