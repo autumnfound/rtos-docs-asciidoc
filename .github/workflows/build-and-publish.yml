@@ -29,7 +29,6 @@ jobs:
           repository: ${{ env.TARGET_REPO }}
           ref: 'main'
           path: 'rtos-docs-html'
-          token: ${{ secrets.DOCS_PUBLISH_TOKEN }}
       - name: Install Node.js
         uses: actions/setup-node@v5
         with:
@@ -37,7 +36,7 @@ jobs:
       - name: Install Antora
         run: npm i antora
       - name: Generate Site
-        run: npx antora antora-playbook.yml
+        run: npx antora ./asciidoc/antora-playbook.yml
       - name: push to rtos-docs-html
         run: |
           cd "${{ github.workspace }}/rtos-docs-html"
