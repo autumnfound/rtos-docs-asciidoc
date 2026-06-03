@@ -39,7 +39,9 @@ jobs:
         run: npx antora ./asciidoc/antora-playbook.yml
       - name: push to rtos-docs-html
         run: |
-          git status
+          ls -al
+          ls -al asciidoc
+          ls -al rtos-docs-html
           cd "${{ github.workspace }}/rtos-docs-html"
 
           git config user.name "eclipse-threadx-bot"
