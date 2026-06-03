@@ -11,11 +11,11 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  TARGET_REPO: 'eclipse-threadx/rtos-docs-html'
+  TARGET_REPO: 'autumnfound/rtos-docs-html'
 
 jobs:
   build:
-    if: github.repository == 'eclipse-threadx/rtos-docs-asciidoc'
+    if: github.repository == 'autumnfound/rtos-docs-asciidoc'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
